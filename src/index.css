@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+body {
+  font-family: Inter, sans-serif;
+}
+
+.scrollbar-none {
+  overflow: auto; /* yoki scroll */
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* Internet Explorer 10+ */
+}
+
+.scrollbar-none::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
