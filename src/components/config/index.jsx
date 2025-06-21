@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const request = axios.create({
-  baseURL: "https://media.zone.repid.uz/api/v1",
+  baseURL: "https://media.zone.crm.repid.uz/api/v1",
 });
 
 request.interceptors.request.use((config) => {
