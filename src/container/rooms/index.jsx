@@ -27,7 +27,7 @@ const Rooms = () => {
         <div className="h-[300px] flex items-center justify-center">
           <Spin size="large" />
         </div>
-      ) : rooms.length > 0 ? (
+      ) : rooms?.length > 0 ? (
         <div className="flex flex-wrap gap-5">
           {rooms.map((item) => (
             <Link

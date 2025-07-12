@@ -15,7 +15,7 @@ request.interceptors.request.use((config) => {
 request.interceptors.response.use(
   (response) => response,
   (error) => {
-    if (error.response && error.response.status === 401) {
+    if (error.response && error.response.status === 403) {
       localStorage.removeItem("auth");
       window.location.href = "/login";
     }
