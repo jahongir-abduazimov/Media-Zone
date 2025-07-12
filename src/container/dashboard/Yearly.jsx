@@ -24,11 +24,6 @@ const getPath = (x, y, width, height) => {
   Z`;
 };
 
-const TriangleBar = (props) => {
-  const { fill, x, y, width, height } = props;
-  return <path d={getPath(x, y, width, height)} stroke="none" fill={fill} />;
-};
-
 export default function FinancialChart({ income, expense, year, type }) {
   // Process the data from props
   const processData = () => {
@@ -40,7 +35,7 @@ export default function FinancialChart({ income, expense, year, type }) {
     const incomeData = income[year] || {};
     const expenseData = expense[year] || {};
     
-    return months.map((month, index) => {
+    return months?.map((month, index) => {
       const monthNumber = index + 1;
       return {
         name: month,
@@ -69,7 +64,7 @@ export default function FinancialChart({ income, expense, year, type }) {
           fill="#8884d8"
         //   label={{ position: "top", formatter: (value) => value > 0 ? new Intl.NumberFormat('en').format(value) : '' }}
         >
-          {data.map((entry, index) => (
+          {data?.map((entry, index) => (
             <Cell key={`income-cell-${index}`} fill={type === "yearly_income" ? colors[0] : colors[1]} />
           ))}
         </Bar>

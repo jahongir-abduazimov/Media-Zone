@@ -29,7 +29,7 @@ const IncomeExpence = () => {
 
   useEffect(() => {
     setActiveCategory(
-      type === "income" ? incomeCategories[0]?.id : expenceCategories[0]?.id
+      type === "income" ? incomeCategories ? incomeCategories[0]?.id : null : expenceCategories ? expenceCategories[0]?.id : null
     );
   }, [incomeCategories, expenceCategories, type]);
 
@@ -38,7 +38,7 @@ const IncomeExpence = () => {
       ...Object.keys(yearlyIncome || {}),
       ...Object.keys(yearlyExpence || {}),
     ])
-  ).map(Number);
+  )?.map(Number);
   const getYearlyIncome = async () => {
     try {
       const res = await request.get("/finance/income/monthly-statistics/");

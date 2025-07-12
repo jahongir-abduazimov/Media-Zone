@@ -4,7 +4,7 @@ import ClientsTable from "./ClientsTable";
 import request from "../../components/config";
 import { useEffect, useState } from "react";
 import AddClient from "./AddClient";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const Clients = () => {
   const [data, setData] = useState([]);
@@ -12,7 +12,6 @@ const Clients = () => {
   const [isOpenModal, setIsOpenModal] = useState(false);
   const [dataCount, setDataCount] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const navigate = useNavigate();
   const state = useLocation();
   const queryParams = new URLSearchParams(state.search);
   const status = queryParams.get("status");

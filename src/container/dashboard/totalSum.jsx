@@ -45,7 +45,7 @@ export default class TotalSum extends PureComponent {
           dataKey="value"
           className="outline-none scale-130"
         >
-          {(type === "income" ? DataIncome : DataExpence).map(
+          {(type === "income" ? DataIncome : DataExpence)?.map(
             (entry, index) => (
               <Cell key={`cell-${index}`} fill={getDynamicColor(index)} />
             )

@@ -32,7 +32,7 @@ export default class Example extends PureComponent {
     ];
 
     function transformData(incomeObj, expenseObj) {
-      return monthNames.map((month, index) => {
+      return monthNames?.map((month, index) => {
         const monthIndex = index + 1;
         return {
           name: month,

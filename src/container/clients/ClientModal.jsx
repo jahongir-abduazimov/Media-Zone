@@ -39,7 +39,7 @@ const ClientModal = ({ isOpen, handleClose, id }) => {
           {loading ? (
             <p className="text-center py-3">Yuklanmoqda...</p>
           ) : (
-            salaries.map((salary) => (
+            salaries?.map((salary) => (
               <div
                 key={salary.id}
                 className="flex justify-between items-center p-3 border-b"

@@ -117,7 +117,7 @@ const Dashboard = () => {
     getYearlyIncome();
     getYearlyExpense();
   }, []);
-  const totalExpencePrice = totalExpense.reduce((acc, item) => {
+  const totalExpencePrice = totalExpense?.reduce((acc, item) => {
     return acc + (item.total_price || 0);
   }, 0);
   const totalIncomePrice = totalIncome?.reduce((acc, item) => {
@@ -198,7 +198,7 @@ const Dashboard = () => {
             </div>
             {type === "expence" ? (
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                {totalExpense.map((name, index) => (
+                {totalExpense?.map((name, index) => (
                   <div key={name} className="flex items-center gap-1">
                     <div
                       className="w-3 h-3 rounded-full"
@@ -212,7 +212,7 @@ const Dashboard = () => {
               </div>
             ) : (
               <div className="mt-8 flex flex-wrap gap-4 justify-center">
-                {totalIncome.map((name, index) => (
+                {totalIncome?.map((name, index) => (
                   <div key={name} className="flex items-center gap-1">
                     <div
                       className="w-3 h-3 rounded-full"
@@ -261,7 +261,7 @@ const Dashboard = () => {
           <Button onClick={() => navigate("/clients")}>Barchasi</Button>
         </div>
         <ClientsTable
-          data={clients.slice(0, 4)}
+          data={clients?.slice(0, 4)}
           loading={employeeLoading}
           isDashboard={true}
           onAddCallback={() => getClients(true)}

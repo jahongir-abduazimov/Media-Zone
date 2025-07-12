@@ -4,9 +4,10 @@ import {
   EmployeeIcon,
   IncomeExpenseIcon,
 } from "../../assets/icons/icon";
-import { LuLogOut } from "react-icons/lu";
+import { LuLogOut, LuTrendingUpDown } from "react-icons/lu";
 import LogoutModal from "../LogoutModal";
 import { useState } from "react";
+import { MdOutlineMeetingRoom } from "react-icons/md";
 
 const Aside = () => {
   const pathname = useLocation().pathname;
@@ -110,6 +111,66 @@ const Aside = () => {
                   }`}
                 >
                   Mijozlar
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2 pr-4">
+            <div className="flex items-center gap-3">
+              <div
+                className={`w-[6px] h-5 rounded-r-xl duration-200 ${
+                  pathname === "/estimate" ? "bg-[#8C52FE]" : "#fff"
+                }`}
+              />
+              <Link
+                to="/estimate"
+                className={`flex rounded-lg duration-200 items-center gap-2 px-3 py-2 w-full ${
+                  pathname === "/estimate"
+                    ? "bg-[#F5F7FA]"
+                    : "hover:bg-[#F5F7FA]"
+                }`}
+              >
+                <LuTrendingUpDown
+                  color={pathname === "/estimate" ? "#8C52FE" : "#525866"}
+                />
+                <span
+                  className={`text-base font-medium duration-200 ${
+                    pathname === "/estimate"
+                      ? "text-[#0E121B]"
+                      : "text-[#525866]"
+                  }`}
+                >
+                  Taxminiy hisob
+                </span>
+              </Link>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2 pr-4">
+            <div className="flex items-center gap-3">
+              <div
+                className={`w-[6px] h-5 rounded-r-xl duration-200 ${
+                  pathname.slice(0, 6) === "/rooms" ? "bg-[#8C52FE]" : "#fff"
+                }`}
+              />
+              <Link
+                to="/rooms"
+                className={`flex rounded-lg duration-200 items-center gap-2 px-3 py-2 w-full ${
+                  pathname.slice(0, 6) === "/rooms"
+                    ? "bg-[#F5F7FA]"
+                    : "hover:bg-[#F5F7FA]"
+                }`}
+              >
+                <MdOutlineMeetingRoom
+                  color={pathname.slice(0, 6) === "/rooms" ? "#8C52FE" : "#525866"}
+                />
+                <span
+                  className={`text-base font-medium duration-200 ${
+                    pathname.slice(0, 6) === "/rooms"
+                      ? "text-[#0E121B]"
+                      : "text-[#525866]"
+                  }`}
+                >
+                  Xonalar
                 </span>
               </Link>
             </div>
