@@ -1,29 +1,6 @@
 import React, { useState } from "react";
-import { Badge, Calendar, Modal, Table } from "antd";
+import { Badge, Calendar, Modal, Table, Spin } from "antd";
 import dayjs from "dayjs";
-
-const data = [
-  {
-    id: "e16156ea-9581-45a6-a07c-325c7a22a680",
-    date: "2025-07-12",
-    start_time: "19:00:00",
-    end_time: "20:00:00",
-    price: 250000,
-    full_name: "Kimdir",
-    phone: "+998999999999",
-    description: "Izoh",
-  },
-  {
-    id: "e16156ea-9581-45a6-a07c-a07c7a22a681",
-    date: "2025-07-12",
-    start_time: "12:00:00",
-    end_time: "13:30:00",
-    price: 180000,
-    full_name: "Yana Kimdir",
-    phone: "+998911111111",
-    description: "Yana izoh",
-  },
-];
 
 const columns = [
   {
@@ -61,7 +38,7 @@ const columns = [
   },
 ];
 
-const DateList = ({ data }) => {
+const DateList = ({ data, isLoading }) => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
 
@@ -99,7 +76,7 @@ const DateList = ({ data }) => {
   };
 
   return (
-    <>
+    <Spin spinning={isLoading} size="large">
       <Calendar dateCellRender={dateCellRender} onSelect={onSelectDate} />
 
       <Modal
@@ -115,9 +92,10 @@ const DateList = ({ data }) => {
           columns={columns}
           rowKey="id"
           pagination={false}
+          loading={isLoading}
         />
       </Modal>
-    </>
+    </Spin>
   );
 };
 
