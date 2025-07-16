@@ -16,7 +16,7 @@ const Dashboard = () => {
   const [yearlyType, setYearlyType] = useState("yearly_income");
 
   const [type, setType] = useState("income");
-  const [incomeExpenseType, setIncomeExpenseType] = useState("current_month");
+  const [incomeExpenseType, setIncomeExpenseType] = useState("last_day");
   const [income, setIncome] = useState(null);
   const [expense, setExpense] = useState(null);
 
@@ -130,9 +130,10 @@ const Dashboard = () => {
           <div className="w-full border border-[#EBEBEB] rounded-2xl p-4 pb-10">
             <Select
               onChange={(e) => setIncomeExpenseType(e)}
-              defaultValue={"current_month"}
+              defaultValue={"last_day"}
               className="w-[140px]"
             >
+              <Select.Option value="last_day">Bugun</Select.Option>
               <Select.Option value="current_month">Joriy oy</Select.Option>
               <Select.Option value="current_week">Joriy hafta</Select.Option>
               <Select.Option value="current_year">Joriy yil</Select.Option>
