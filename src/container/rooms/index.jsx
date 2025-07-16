@@ -31,10 +31,11 @@ const Rooms = () => {
         <div className="flex flex-wrap gap-5">
           {rooms.map((item) => (
             <Link
-              to={`/rooms/${item.id}?name=${item.name}`}
+              key={item.id}
+              to={`/rooms/${item.id}?name=${item.name_uz || item.name_ru}`}
               className="w-[200px] h-[200px] border border-gray-400 text-gray-600 rounded-2xl text-2xl cursor-pointer flex items-center justify-center p-4"
             >
-              {item.name}
+              {item.name_uz || item.name_ru}
             </Link>
           ))}
         </div>
