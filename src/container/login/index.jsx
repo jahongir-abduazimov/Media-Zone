@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Logo from "../../assets/img/logo.svg";
+import Logo from "../../assets/img/logo.png";
 import { Button, Form, Input } from "antd";
 import { UserOutlined } from "@ant-design/icons";
 import { MdOutlinePassword } from "react-icons/md";
@@ -27,7 +27,7 @@ const Login = () => {
   return (
     <div className="w-full h-screen flex">
       <div className="w-[50%] h-full flex items-center justify-center bg-[#8b52fe41]">
-        <p className="text-6xl font-bold text-[#8C52FE]">LOGO</p>
+        <img src={Logo} alt="logo" width={350} />
       </div>
       <div className="w-[50%] h-full flex items-center justify-center flex-col gap-5">
         <p className="text-[30px] font-bold">Kirish</p>

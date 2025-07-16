@@ -8,6 +8,7 @@ import { LuLogOut, LuTrendingUpDown } from "react-icons/lu";
 import LogoutModal from "../LogoutModal";
 import { useState } from "react";
 import { MdOutlineMeetingRoom } from "react-icons/md";
+import Logo from "../../assets/img/logo.png"
 
 const Aside = () => {
   const pathname = useLocation().pathname;
@@ -24,7 +25,7 @@ const Aside = () => {
         <div className="h-[88px] px-4 pt-[17px]">
           <div className="border-b border-[#E1E4EA] pb-4">
             <Link to={"/"} className="font-semibold text-4xl">
-              LOGO
+              <img src={Logo} alt="logo" width={200} />
             </Link>
           </div>
         </div>
